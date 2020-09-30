@@ -1,5 +1,5 @@
 {
-  "name": "ProyectoShuar",
+  "name": "proyectoshuar",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/JenifferHerrera/ProyectoShuar.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carolina Chamorro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JenifferHerrera/ProyectoShuar/issues"
