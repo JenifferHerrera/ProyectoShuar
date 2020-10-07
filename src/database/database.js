@@ -1,19 +1,14 @@
-import Sequelize, {Sequelize} from 'sequelize';
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('shuar', 'postgres', 'c1997', {
+  host: 'localhost',
+  dialect: 'postgres',
+})
+sequelize.authenticate()
+  .then(() => {
+    console.log('Conectado')
+  })
+  .catch(err => {
+    console.log('No se conecto')
+  })
 
-export const sequelize= new Sequelize( 
-    'shuar',
-    'postgres',
-    'c1997',
-    {
-        host:'localhost',
-        dialect:'postgres',
-        pool:{
-            max:5,
-            min:0,
-            require:30000,
-            idle:10000
-        },
-        //mensaje de operaciones  por consola desativadas
-        logging:false
-    }
-)
+  module.exports=sequelize;
