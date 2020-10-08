@@ -1,38 +1,51 @@
 {
-  "name": "ProyectoShuar",
+  "name": "proyectoshuar",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "babel src --out-dir dist",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JenifferHerrera/ProyectoShuar.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carolina Chamorro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JenifferHerrera/ProyectoShuar/issues"
   },
   "homepage": "https://github.com/JenifferHerrera/ProyectoShuar#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.11.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "express-pg-session": "^1.1.0",
+    "express-session": "^1.17.1",
+    "flash": "^1.1.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "pg": "^8.3.3",
+    "pg-hstore": "^2.3.3",
     "pg-promise": "^10.6.1",
     "postgres": "^1.0.2",
     "sequelize": "^6.3.5",
-    "timeago": "^1.6.7"
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "eslint": "^7.9.0"
   }
 }
