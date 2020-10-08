@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const bodyParser= require ('body-parser');
 const session=require('express-session');
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
+var formidable= require('express-formidable');
 
 //database
 const sequelize= require('./database/database');
@@ -17,6 +18,7 @@ const app= express();
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+//app.use(formidable.parse({ keepExtensions:true,uploadDir:"imagenes" }));
 
 //configuración
 app.set('port',process.env.PORT || 3333);
@@ -38,7 +40,7 @@ var sessionStore = new SequelizeStore({
  });
  
  app.use(session({
-   secret: 'keyboard cat',
+   secret: 'proyecto-shuar',
    resave: false, 
    saveUninitialized: false,
    store: sessionStore

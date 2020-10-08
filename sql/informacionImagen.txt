@@ -1,0 +1,44 @@
+.router.route("imagenes")
+  .get(function(req,res){
+      Imagen.find({creator: res.local.user._id},function(err,imagenes){
+          res.render('app/imagenes/index',{imagenes:imagenes});
+      })
+  });
+
+  .post(function(req,res){
+      var extension=req.body.archivo.name.split(".").pop();
+      console.log(req.body.archivo//nombre donde se va a subir la imagen del input);
+      var data={
+          title:req.body.title,
+          creator:res.locals.user._id,
+          extension:extension
+      }
+      var imagen=new Imagen(data);
+      imagen.save(function(err){
+          if(!err){
+              //nombre de la carpeta
+              fs.rename(req.body.archivo.path,"public/imagenes/"+imagen._id+"."+extension);
+              res.redirect('app/imagenes/'+imagen._id);
+          }else{
+              console.log(imagen);
+              res.render(err);
+          }
+      })
+  })
+
+
+  // en los modelos 
+  var mongose= require("mongose");
+  var schema= mongose.Schema;
+
+  var img_schema= new Schema({
+      title:{type:String, required:true},
+      creator:{type:Schema.Types.ObjectId,ref:"User"},
+      extension:{type:String,required:true}
+  });
+  var Imagen=mongose.mode("imagen",img_schema);
+
+  module.exports=Imagen;
+
+  // donde vamos a mostrar
+  img(src="/public/imagenes/#(imagen._id).#(imagen.extension)")
