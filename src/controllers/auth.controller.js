@@ -1,19 +1,22 @@
-const authCtrl={}
-const passport= require('passport');
+const authCtrl = {};
 
-//login
-authCtrl.renderLogin=(req,res)=>{
-   res.render('login'); 
-}
-authCtrl.Login=passport.authenticate('local.signin',{
-    successRedirect:'/admin',
-    failureRedirect:'/login',
-    failureFlash:true
-})
+const passport = require('passport');
 
-authCtrl.logout=(req,res)=>{
+
+
+authCtrl.renderLogin = (req, res, next) => {
+    res.render('login');
+};
+
+authCtrl.login = passport.authenticate('local.signin', {
+    successRedirect: '/admin',
+    failureRedirect: '/login',
+    failureFlash: true
+});
+
+authCtrl.logout = (req, res, next) => {
     req.logOut();
     res.redirect('/');
-}
+};
 
-module.exports=authCtrl;
+module.exports = authCtrl;

@@ -1,15 +1,30 @@
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize('shuar', 'postgres', 'c1997', {
-  host: 'localhost',
-  dialect: 'postgres',
-})
-sequelize.authenticate()
-  .then(() => {
-    console.log('Conectado')
-  })
-  .catch(err => {
-    console.log('No se conecto')
-  })
+const mysql = require('mysql');
+const { promisify }= require('util');
 
-  module.exports=sequelize;
-  
+const { database } = require('./keys');
+
+const pool = mysql.createPool(database);
+
+pool.getConnection((err, connection) => {
+  if (err) {
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      console.error('Database connection was closed.');
+    }
+    if (err.code === 'ER_CON_COUNT_ERROR') {
+      console.error('Database has to many connections');
+    }
+    if (err.code === 'ECONNREFUSED') {
+      console.error('Database connection was refused');
+    }
+  }
+
+  if (connection) connection.release();
+  console.log('Database is Connected');
+
+  return;
+});
+
+// Promisify Pool Querys
+pool.query = promisify(pool.query);
+
+module.exports = pool;

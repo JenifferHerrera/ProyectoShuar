@@ -1,70 +1,68 @@
-const express = require('express');
-const morgan = require ('morgan');
-const path = require ('path');
-const exphbs= require('express-handlebars');
+const express = require('express'); 
+const morgan = require('morgan');
+const path = require('path');
+const exphbs = require('express-handlebars');
+const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
-const bodyParser= require ('body-parser');
-const session=require('express-session');
-var SequelizeStore = require('connect-session-sequelize')(session.Store);
-var formidable= require('express-formidable');
+const mysqlstore = require('express-mysql-session')(session);
+const bodyparser = require('body-parser'); 
 
-//database
-const sequelize= require('./database/database');
-//inicialización
-const app= express();
+const {database} = require('./database/keys');
 
-//middleware
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-//app.use(formidable.parse({ keepExtensions:true,uploadDir:"imagenes" }));
 
-//configuración
-app.set('port',process.env.PORT || 3333);
-app.set('views',path.join(__dirname,'views'));
+const app = express();
+require('./lib/passport');
+
+/// archivos compartidos
+app.set('port', process.env.PORT|| 3333);
+app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs',exphbs({
     defaultLayout:'main',
     layoutsDir:path.join(app.get('views'),'layouts'),
-    partialsDir:path.join(app.get('views'),'partials'),
-    extname:'.hbs',
-    helpers:require ('./lib/handlebars')
+partialsDir:path.join(app.get('views'),'partials'),
+extname: '.hbs',
+helpres: require('./lib/handlebars')
 }));
+app.set('view engine', '.hbs');
+/// archivos compartidos
 
-app.set('view engine','.hbs');
 
-var sessionStore = new SequelizeStore({
-    db: sequelize,
-    checkExpirationInterval: 15 * 60 * 1000,
-    expiration: 7 * 24 * 60 * 60 * 1000
- });
- 
- app.use(session({
-   secret: 'proyecto-shuar',
-   resave: false, 
-   saveUninitialized: false,
-   store: sessionStore
- }));
- 
- sessionStore.sync()
-
+//midlewars
+app.use(morgan('dev'));
+app.use(bodyparser.urlencoded({
+    extended:false
+}));
+app.use(bodyparser.json());
+app.use(session({
+    secret:'FINTECH',
+    resave:false,
+    saveUninitialized:false,
+    store: new mysqlstore(database)
+}));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+//midlewars
 
-//variables globales
-app.use((req,res,next)=>{
-    app.locals.message=req.flash('message'),
-    app.locals.success=req.flash('success'),
-    app.locals.user=req.user,
-    next()
+//varible globales 
+app.use((req,res,next )=>{
+    app.locals.menssage = req.flash('menssage');
+    app.locals.success = req.flash('success');
+    app.locals.user = req.user;
+    next();
 });
+//varible globales 
 
-//rutas
-app.use(require('./routes/index.route'));
-app.use(require('./routes/user.route'));
+//public
+app.use(express.static(path.join(__dirname ,'public')));
+//public
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+//routers
+app.use(require('./routes/index.route'))
+app.use(require('./routes/auth.route'))
+app.use(require('./routes/user.route'))
 
-module.exports=app;
+
+module.exports = app; 

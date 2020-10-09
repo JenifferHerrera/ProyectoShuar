@@ -1,5 +1,5 @@
 const userCtrl={}
 userCtrl.renderUsuario=(req,res,next)=>{
-    re.render('admin')
+    res.render('admin')
 }
 module.exports=userCtrl;
