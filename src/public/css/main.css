@@ -84,7 +84,7 @@ input {
 	outline: none;
 	border: none;
 }
-input[type="file"]#hoja {
+input[type="file"]#foto {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -92,7 +92,7 @@ input[type="file"]#hoja {
   position: absolute;
   z-index: -1;
   }
-  label[for="hoja"] {
+  label[for="foto"] {
  font-size: 14px;
  font-weight: 600;
  color: #fff;
@@ -221,11 +221,11 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(93,84,240,0.5);
-  background: -webkit-linear-gradient(left, rgba(227, 236, 241, 0.5), rgba(227, 236, 241, 0.5));
-  background: -o-linear-gradient(left, rgba(227, 236, 241, 0.55), rgba(227, 236, 241, 0.5));
-  background: -moz-linear-gradient(left, rgba(227, 236, 241, 0.5), rgba(227, 236, 241, 0.5));
-  background: linear-gradient(left, rgba(227, 236, 241, 0.5), rgba(227, 236, 241, 0.5));
+  background: rgba(92, 85, 223, 0.5);
+  background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
   pointer-events: none;
 }
 
@@ -241,7 +241,30 @@ iframe {
   -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
+.wrap-loginmedio {
+  width: 440px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.wrap-loginpersonalizado {
+  width: 490px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
 
 /*==================================================================
 [ Form ]*/
