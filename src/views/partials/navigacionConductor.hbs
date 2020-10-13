@@ -1,42 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <a class="navbar-brand" href="#">Shuar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                {{#if user}}
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Editar datos</a>
-                </li>
+<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav"> <!--fixed-top-->
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="/">SHUAR WEB</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+            {{#if user}}
                 <li class="nav-item">
-                  <a class="nav-link" href="/logout">Salir</a>
-                </li>
+            <a class="nav-link js-scroll active" href="/">Editar datos</a>
+          </li>
+                 <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/logout">Salir</a>
+          </li>
                 {{else}}
-                <a class="navbar-brand" href="#">Shuar</a>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Rigistrarse como</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/login">Iniciar sesion</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Trabaja con nosotros</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Covid-19</a>
-                </li>
-               {{/if}}
-              </ul>
-            </div>
-          </nav>
-
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/login">Iniciar Sesion</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/signup">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" target="_blank" href="https://www.todaunavida.gob.ec/medidas-de-prevencion-frente-al-nuevo-coronavirus-covid-19-en-grupos-prioritarios/">Covid-19</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
       
 
 

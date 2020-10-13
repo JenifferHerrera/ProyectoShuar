@@ -1,20 +1,20 @@
-	<div class="container-login100" style="background-image: url('/img/conductor.jpg');">
+	<div class="container-login100 m-t-100" style="background-image: url('/img/conductor.jpg');">
 		<div class="wrap-loginpersonalizado p-l-55 p-r-55 p-t-50 p-b-30">
-			<form class="login100-form validate-form" action="/producto/editar" method="POST" >
+			<form class="login100-form validate-form" action="/producto/crear" method="POST" >
 				<span class="login100-form-title p-b-37">
-					Editar-Producto
+					Producto
 				</span>
 				<input type="hidden" name="estado" value="true"/>
                 </span>
                 <div class="wrap-input100 validate-input m-b-25" data-validate="Subir foto del producto">
                         <label class="control-label">Subir una imagen del producto</label>
-                        <input type="file" class="form-control-file pb-2 ml-3" name="foto_producto" id="foto_producto" value="{{producto.foto_producto}}" >
+                        <input type="file" class="form-control-file pb-2 ml-3" name="foto_producto" id="foto_producto">
                         <span class="focus-input100"></span>
                     </div>
 				<div class="row">
                     <div class="col-6">
 					<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el nombre del producto">
-                        <input class="input100 text-secondary" type="text" name="nombre_producto" id="nombre_producto" value="{{producto.nombre_producto}}"
+                        <input class="input100 text-secondary" type="text" name="nombre_producto" id="nombre_producto"
                             placeholder="Nombre del producto">
                         <span class="focus-input100"></span>
                     </div>
@@ -35,13 +35,13 @@
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el valor del producto">
-							<input class="input100 text-secondary" type="text" name="valor" placeholder="Precio" value="{{producto.valor}}" >
+							<input class="input100 text-secondary" type="text" name="valor" placeholder="Precio">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la cantidad del producto">
-							<input class="input100 text-secondary" type="number" name="cantidad" value="{{producto.cantidad}}" placeholder="Cantidad">
+							<input class="input100 text-secondary" type="number" name="cantidad" placeholder="Cantidad">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
@@ -50,14 +50,14 @@
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la fecha de elaboración">
                             <label class="control-label">Fecha de elaboración</label>
-							<input class="input100 text-secondary" type="date" name="fecha_elab" value="{{producto.fecha_elab}}" placeholder="Fecha de elaboración">
+							<input class="input100 text-secondary" type="date" name="fecha_elab" placeholder="Fecha de elaboración">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la fecha de caducidad">
                             <label class="control-label">Fecha de caducidad</label>
-							<input class="input100 text-secondary" type="date" name="fecha_cadu" value="{{producto.fecha_cadu}}"
+							<input class="input100 text-secondary" type="date" name="fecha_cadu"
 								placeholder="Fecha de caducidad">
 							<span class="focus-input100"></span>
 						</div>
@@ -67,7 +67,7 @@
 					<button class="login100-form-btn mr-2" type="submit">
 						Guardar
                     </button>
-                    <button class="login100-form-btn ml-2">
+                    <button class="login100-form-btn ml-2" type="submit">
 						Regresar
 					</button>
 				</div>

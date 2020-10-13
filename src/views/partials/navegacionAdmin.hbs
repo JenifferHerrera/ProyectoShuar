@@ -1,19 +1,18 @@
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav"> <!--fixed-top-->
     <div class="container">
       <a class="navbar-brand js-scroll" href="/">SHUAR WEB</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault"> 
         <ul class="navbar-nav">
             {{#if user}}
-                <li class="nav-item">
-            <a class="nav-link js-scroll active" href="/">Editar datos</a>
+           <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/signup">Registrar</a>
           </li>
-                 <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link js-scroll active" href="/logout">Salir</a>
           </li>
                 {{else}}
@@ -21,10 +20,7 @@
             <a class="nav-link js-scroll active" href="/">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/login">Iniciar Sesion</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link js-scroll active" href="/signup">Registrarse</a>
+            <a class="nav-link js-scroll" href="/adminlogin">Iniciar Sesion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" target="_blank" href="https://www.todaunavida.gob.ec/medidas-de-prevencion-frente-al-nuevo-coronavirus-covid-19-en-grupos-prioritarios/">Covid-19</a>
