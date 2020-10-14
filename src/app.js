@@ -66,6 +66,6 @@ app.use(require('./routes/user.route'))
 app.use('/servicio',require('./routes/servicio.route'));
 app.use('/producto',require('./routes/producto.route'));
 app.use('/catalogo',require('./routes/catalogoProducto.route'));
-app.use('/tipo/',require('./routes/tipoVehiculo.route'));
+app.use('/tipo',require('./routes/tipoVehiculo.route'));
 
 module.exports = app; 

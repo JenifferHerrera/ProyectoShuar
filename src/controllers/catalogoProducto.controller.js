@@ -11,12 +11,12 @@ catalogoCtrl.agregarCatProducto=async(req,res)=>{
         nombre_producto
     }
     await database.query('INSERT INTO catalogo_producto set ?',[nuevoProducto]);
-    req.flash('success','Se ha creadi un nuevo tipo de producto');
+    req.flash('success','Se ha creado un nuevo tipo de producto');
      res.redirect('/catalogo/lista');//crear vista
 }
 
 catalogoCtrl.listaCatalogo=async(req,res)=>{
-    const lista = await database.query('SELECT * FROM catalago_producto');
+    const lista = await database.query('SELECT * FROM catalogo_producto');
     res.render('catalogoProducto',{lista});//crear vista catalogoProducto
 }
 

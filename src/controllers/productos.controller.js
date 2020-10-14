@@ -25,6 +25,10 @@ productoCtrl.listaProductos=async(req,res)=>{
     const lista=await database.query('SELECT * FROM productos WHERE id_asociado=?',[req.user.id]);
     res.render('productosAsociados',{lista});
 }
+productoCtrl.todosLosProductos=async(req,res)=>{
+    const todo=await database.query('SELECT * FROM productos');
+    res.render('productos',{todo});
+}
 
 productoCtrl.seleccionarProducto=async(req,res)=>{
     const {id}=req.params;

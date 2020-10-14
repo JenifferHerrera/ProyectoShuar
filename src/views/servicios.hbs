@@ -1,7 +1,6 @@
 <form action="/servicio/lista"></form>
-
   <!--/ Section Portfolio Star /-->
-  
+
   <section id="work" class="portfolio-mf sect-pt4 route container-login100 m-t-80">
     <div class="container">
       <div class="row">
@@ -16,6 +15,8 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/editar/{{id_servicio}}" >Editar servicio</a></button>
+       <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/crear">Crear servicio</a></button>
+
 {{#each lista}}
 
 <h1>{{nombre}}</h1>
@@ -23,7 +24,7 @@
 
 {{else}}
 <h1>No se hay servicio creado</h1>
-<a href="/servicio/crear">Crear servicio</a>
+ <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/crear">Crear servicio</a></button>
 
 
 

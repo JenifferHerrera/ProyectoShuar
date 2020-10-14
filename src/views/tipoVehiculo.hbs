@@ -1,0 +1,39 @@
+<form action="/tipo/lista"></form>
+<section class="m-t-120">
+<h1 class="text-black text-center">Catálogo de tipo de vehiculos</h1>
+<div class="text-center mt-3">
+    <a href="javascript:history.back(-1);" class="btn btn-outline-primary mr-2 mb-3">Regresar</a>
+    <a href="/tipo/crear" class="btn btn-outline-primary ml-2 mb-3">Crear tipo de vehiculo</a>
+</div>
+<div class="row ">
+    <div class="col-8" style="margin-right:auto; margin-left:auto;">
+        {{#each lista}}
+        <table class="table table-hover table-responsive-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Tipo de vehiculo
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        {{nombre_tipo_vehiculo}}
+                    </td>
+                    <td>
+                        <a href="/tipo/editar/{{id_tipo_ve}}" class="btn btn-primary mr-2">Editar</a>
+                        <a href="/tipo/eliminar/{{id_tipo_ve}}" class="btn btn-danger ml-2">Eliminar</a>
+                    </td>
+                </tr>
+                {{else}}
+                <h1 class="text-danger text-center">No hay servicio creado</h1>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
