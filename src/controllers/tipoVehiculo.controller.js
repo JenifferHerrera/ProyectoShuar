@@ -37,4 +37,11 @@ tipoCtrl.editarTipoVehiculo=async(req,res)=>{
      res.redirect('/tipo/lista');
 }
 
+tipoCtrl.eliminarTipoVehiculo=async(req,res)=>{
+    const {id}=req.params;
+    await database.query('DELETE FROM tipo_vehiculo WHERE id_tipo_ve=?',[id]);
+    req.flash('success','Se ha eliminado el tipo del catálogo');
+     res.redirect('/tipo/lista');
+}
+
 module.exports=tipoCtrl;

@@ -1,24 +1,25 @@
-<div class="container-login100 m-t-100" style="background-image: url('/img/s2.jpg');">
-	<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+<div class="container-login100" style="background-image: url('/img/s2.jpg');">
+	<div class="wrap-loginmedio p-l-55 p-r-55 p-t-80 p-b-30 m-t-80">
 		<form class="login100-form validate-form" action="/servicio/crear" method="POST">
 			<span class="login100-form-title p-b-37">
 				Registro Servicio
 			</span>
-			<input type="hidden" name="estado" value="true" />
+			<input type="hidden" name="estado" value=1/><!--1 es true-->
 			<div class="wrap-input100 validate-input m-b-20" data-validate="Ingres el nombre ">
 				<input class="input100" type="text" name="nombre" placeholder="Ingrese el nombre ">
 				<span class="focus-input100"></span>
 			</div>
-			<div>
+			<div class="container-login100-form-btn mb-2">
+				<label class="control-label ">Subir una imagen </label>
 				<input type="file" name="imagen" id="imagen" placeholder="Foto">
-				<label class="login100-form-btn" for="imagen">Subir Foto</label>
 				<span class="focus-input100"></span>
 			</div>
 			<br>
 			<div class="container-login100-form-btn">
-				<button class="login100-form-btn">
-					Registrarse
+				<button class="login100-form-btn mr-1">
+					Guardar
 				</button>
+				<a href="/admin" class="btn login100-form-btn ml-1">Regresar</a>
 			</div>
 		</form>
 	</div>

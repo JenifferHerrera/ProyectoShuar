@@ -14,7 +14,7 @@ productoCtrl.agregarProducto=async(req,res)=>{
         cantidad,
         foto_producto,
         estado,
-        catalogo_producto:req.catalogo.id,//el catalogo de productos
+        catalogo_producto:req.catalogo.id,//el nombre categoria de productos
         id_asociado:req.user.id //Id del asociado
     }
     await database.query('INSERT INTO servicios set ?', [nuevoProducto]);

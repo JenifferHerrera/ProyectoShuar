@@ -304,7 +304,17 @@ iframe {
   background: transparent;
   padding: 0 20px 0 23px;
 }
-
+.letraMorada {
+  font-family: SourceSansPro-Bold;
+  font-size: 16px;
+  color: #4b2354;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  padding: 0 20px 0 23px;
+}
 
 /*------------------------------------------------------------------
 [ Focus Input ]*/
@@ -522,3 +532,38 @@ iframe {
     padding-right: 15px;
   }
 }
+/*//////////////////////////////////////////////////////////////////
+[ Nav DROPWDON]*/
+.dropbtn {
+  background-color: #92269c7e;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #471066;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #92269c7e}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #92269c7e;}

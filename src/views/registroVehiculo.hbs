@@ -1,26 +1,28 @@
 
 	<div class="container-login100 m-t-100" style="background-image: url('/img/conductor.jpg');">
 		<div class="wrap-loginpersonalizado p-l-55 p-r-55 p-t-50 p-b-30">
-			<form class="login100-form validate-form">
+			<form class="login100-form validate-form" action="/vehiculo/crear" method="POST">
 				<span class="login100-form-title p-b-37">
 					Registro Vehículo
 				</span>
-				<input type="hidden" name="estado" value="true"/>
+				<input type="hidden" name="estado" value=1/>
+				<input type="hidden" name="id_conductor" value="{{user.id}}"/>
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
 							<label class="control-label">Tipo de vehículo</label>
-							<select class="form-control form-control-lg">
-								<option>Seleccione..</option>
-								<option>Rentado</option>
-								<option>Cooperativa</option>
+							<select class="form-control form-control-lg" name="tipo_vehiculo">
+								<option value="{{tipo_vehiculo.id}}">{{tipo_vehiculo.nombre_tipo_vehiculo}}</option>
+							{{#each lista}}
+								<option value="{{this.id}}">{{this.nombre_tipo_vehiculo}}</option>
+							{{/each}}
 							</select>
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el número de placa">
-							<input class="input100 text-secondary" type="text" name="username"
+							<input class="input100 text-secondary" type="text" name="num_placa"
 								placeholder="Número de placa">
 							<span class="focus-input100"></span>
 						</div>
@@ -29,13 +31,13 @@
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el modelo del vehículo">
-							<input class="input100 text-secondary" type="text" name="username" placeholder="Modelo">
+							<input class="input100 text-secondary" type="text" name="modelo" placeholder="Modelo">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la marca del vehículo">
-							<input class="input100 text-secondary" type="text" name="username" placeholder="Marca">
+							<input class="input100 text-secondary" type="text" name="marca" placeholder="Marca">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
@@ -43,13 +45,13 @@
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el color">
-							<input class="input100 text-secondary" type="text" name="username" placeholder="Color">
+							<input class="input100 text-secondary" type="text" name="color" placeholder="Color">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese el año del vehículo">
-							<input class="input100 text-secondary" type="text" name="pass"
+							<input class="input100 text-secondary" type="text" name="ano_vehiculo"
 								placeholder="Año del vehículo">
 							<span class="focus-input100"></span>
 						</div>
@@ -59,26 +61,14 @@
 					<div class="col-12">
 						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la fotografía">
 							<label class="control-label">Subir una imagen del vehículo</label>
-							<input type="file" class="form-control-file pb-2 ml-3" id="exampleFormControlFile1">
+							<input type="file" class="form-control-file pb-2 ml-3" name="foto_vehiculo"
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 				</div>
-					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la contraseña">
-							<input class="input100 text-secondary" type="password" name="pass" placeholder="Contraseña">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-						<div class="wrap-input100 validate-input m-b-25" data-validate="Confirme su contraseña">
-							<input class="input100 text-secondary" type="password" name="pass"
-								placeholder="Confirmar contraseña">
-							<span class="focus-input100"></span>
-						</div>
-					
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn" type="submit">
-						Registrarse
+						Registrar
 					</button>
 				</div>
 		</div>

@@ -1,0 +1,21 @@
+POR HACER
+-Perfil de asociado(no se muestran datos)
+
+
+-Verificar los action con los controlladores en conductor y en las rutas
+-Realizar las rutas de conductor.route.js
+-Las vistas en perfil con vehiculos
+-rutas de vehiculos
+-conductor/vista--router
+
+
+
+HECHO
+-Administrador no reconoce un usuario registrado desde la base de datos
+-Hacer insert para las tablas de catalogo y tipo de vehiculo 
+-cambiar names en registroVehiculo
+-Editar la vista asociados para Administrador
+-Hacer la vista de Perfil de asociados y en el action poner conductor/vista
+-Editar asociado
+-Vista de conductores para Administrador
+

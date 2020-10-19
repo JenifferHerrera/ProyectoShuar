@@ -1,36 +1,44 @@
 
 	<div class="container-login100 m-t-100" style="background-image: url('/img/trabajo.jpeg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form class="login100-form validate-form">
+			<form class="login100-form validate-form" action="/registroConductor" method="POST">
 				<span class="login100-form-title p-b-37">
 					Trabaje con nosotros
 				</span>
-
+                <input type="hidden" name="estado" value=1/><!--1 es true-->
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese N° de identificación">
+							<input class="input100 text-secondary" type="text" name="username" placeholder="N° identificación">
+							<span class="focus-input100"></span>
+						</div>
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingres su nombre">
-					<input class="input100" type="text" name="username" placeholder="Nombre">
+					<input class="input100" type="text" name="nombre" placeholder="Nombre">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingres su apellido">
-					<input class="input100" type="text" name="username" placeholder="Apellido">
+					<input class="input100" type="text" name="apellido" placeholder="Apellido">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25" data-validate = "Ingrese un número de telefono">
-					<input class="input100" type="number" name="pass" placeholder="Teléfono">
+					<input class="input100" type="text" name="telefono" placeholder="Teléfono">
 					<span class="focus-input100"></span>
                 </div>
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el correo electrónico">
-					<input class="input100" type="text" name="username" placeholder="Correo">
+					<input class="input100" type="text" name="correo" placeholder="Correo">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input m-b-25" data-validate="Subir su Curriculum">
 					<label class="control-label">Subir PDF</label>
-					<input type="file" class="form-control-file pb-2 ml-3" id="exampleFormControlFile1">
+					<input type="file" class="form-control-file pb-2 ml-3" name="curriculum">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la contraseña">
+					<input class="input100 text-secondary" type="password" name="password" placeholder="Contraseña">
 					<span class="focus-input100"></span>
 				</div>
                 <br>
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn">
+					<button class="login100-form-btn" type="submit">
 						Registrarse
 					</button>
 				</div>

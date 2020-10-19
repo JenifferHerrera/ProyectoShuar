@@ -1,132 +1,65 @@
   <!--/ Section Portfolio Star /-->
   <form action="/producto/todo"></form>
-  <section id="work" class="portfolio-mf sect-pt4 route container-login100 m-t-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              Productos
-            </h3>
-            
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/e.jpg" data-lightbox="gallery-mf">
-              <div class="work-img text-center">  <img src="/img/e.jpg" alt="" class="img-fluid" width="270px">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Pizzas</h2>
-                    
-                  </div>
-                  <div class="col-sm-4">
-                  
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/ma1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img text-center">
-                <img src="/img/ma1.jpg" alt="" class="img-fluid"  width="285px">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Hamburguesas</h2>
-                    
-            
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/f1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/f1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Farmacéutico</h2>
-                    
-                  </div>
-                
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/y.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/y.jpg" alt="" class="img-fluid" width="330">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Yogurt</h2>
-                    
-                  </div>
-                 
-                 
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/a.png" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/a.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Atún</h2>
-                    
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/ace.jpg" data-lightbox="gallery-mf">
-              <div class="work-img text-center">
-                <img src="/img/ace.jpg" alt="" class="img-fluid" width="230">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Aceite</h2>
-                    
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
-      </div>
+<section class="m-t-120">
+<h1 class="text-black text-center">Productos de los asociados</h1>
+<div class="text-center mt-3">
+    <a href="/admin" class="btn btn-outline-primary mr-2 mb-3">Regresar</a>
+</div>
+<div class="row ">
+    <div class="col-8" style="margin-right:auto; margin-left:auto;">
+        <table class="table table-hover table-responsive-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Asociado
+                    </th>
+                    <th>
+                      Servicio
+                    </th>
+                    <th>
+                      Producto
+                    </th>
+                    <th>
+                      Cantidad
+                    </th>
+                    <th>
+                      Precio/u
+                    </th>
+                    <th>
+                      Imagen
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+        {{#each todo}}
+                <tr>
+                    <td>
+                        {{id_asociado}}
+                    </td>
+                     <td>
+                        {{nombre_catalogo}}<!--nombre de la categoria del producto-->
+                    </td>
+                    <td>
+                       {{nombre_producto}}
+                    </td>
+                    <td>
+                       {{cantidad}}
+                    </td>
+                    <td>
+                       {{valor}}
+                    </td>
+                    <td>
+                       {{foto_producto}}
+                    </td>
+                </tr>
+                {{else}}
+                <h1 class="text-danger text-center mb-2">No hay producto creado</h1>
+                {{/each}}
+
+            </tbody>
+        </table>
     </div>
-  </section>
+</div>
+</section>
+
   <!--/ Section Portfolio End /-->

@@ -1,10 +1,10 @@
 <div class="container-login100 m-t-100" style="background-image: url('/img/asociado.jpg');">
 		<div class="wrap-loginpersonalizado p-l-55 p-r-55 p-t-80 p-b-30">
-			<form class="login100-form validate-form">
+			<form class="login100-form validate-form" action="/registroAsociado" method="POST">
 				<span class="login100-form-title p-b-37">
 					Asociados
 				</span>
-				<input type="hidden" name="estado" value="true"/>
+				<input type="hidden" name="estado" value=1/><!--1 es true-->
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese N° de identificación">
@@ -14,7 +14,7 @@
 					</div>
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese nombre de la empresa">
-							<input class="input100 text-secondary" type="text" name="username" placeholder="Nombre de la empresa">
+							<input class="input100 text-secondary" type="text" name="nombre_empresa" placeholder="Nombre de la empresa">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
@@ -22,16 +22,21 @@
 				<div class="row">
 					<div class="col-6">
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la actividad comercial">
-					<input class="input100 text-secondary" type="text" name="username" placeholder="Actividad comercial">
+					<input class="input100 text-secondary" type="text" name="actividad_comercial" placeholder="Actividad comercial">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
 					<div class="col-6">
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la dirección">
-					<input class="input100 text-secondary" type="text" name="username" placeholder="Dirección">
+					<input class="input100 text-secondary" type="text" name="direccion" placeholder="Dirección">
 					<span class="focus-input100"></span>
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese los servicios">
-					<input class="input100 text-secondary" type="text" name="username" placeholder="Servicios">
+				</div>
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electronico">
+					<input class="input100 text-secondary" type="text" name="correo" placeholder="Correo">
+					<span class="focus-input100"></span>
+				</div>
+				{{!-- <div class="wrap-input100 validate-input m-b-20" >
+					<input class="input100 text-secondary" type="text" name="" value="{{servicio.id_servicio}}" placeholder="Servicios">
 					<span class="focus-input100"></span>
 					
 							<select class="form-control form-control-lg">
@@ -43,37 +48,8 @@
 								<option>Cursos</option>
 								<option>Productos</option>
 							</select>
-				</div>
+				</div> --}}
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-6">
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
-					<input class="input100 text-secondary" type="text" name="username" placeholder="Correo electrónico">
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la dirección">
-					<input class="input100 text-secondary" type="text" name="username" placeholder="Dirección">
-					<span class="focus-input100"></span>
-				</div>
-					</div>
-						<div class="col-6">
-				<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la contraseña">
-					<input class="input100 text-secondary" type="password" name="pass" placeholder="Contraseña">
-					<span class="focus-input100"></span>
-				</div>
-						</div>
-				</div>
-				<div class="row">
-					<div class="col-6">
-				<div class="wrap-input100 validate-input m-b-25" data-validate="Confirme su contraseña">
-					<input class="input100 text-secondary" type="password" name="pass" placeholder="Confirmar contraseña">
-					<span class="focus-input100"></span>
-				</div>
-					</div>
-				<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese correo electrónico">
-					<input class="input100 text-secondary" type="password" name="pass" placeholder="Correo electrónico">
-					<span class="focus-input100"></span>
-				</div>
-				</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
@@ -87,17 +63,10 @@
 				<div class="row">
 					<div class="col-6">
 				<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la contraseña">
-					<input class="input100 text-secondary" type="password" name="pass" placeholder="Contraseña">
+					<input class="input100 text-secondary" type="password" name="password" placeholder="Contraseña">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
-					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-20" data-validate="Confirme su contraseña">
-							<input class="input100 text-secondary" type="text" name="username" placeholder="Confirmar contraseña">
-							<span class="focus-input100"></span>
-						</div>
-				</div>
-
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn" type="submit">
 						Registrarse

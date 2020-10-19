@@ -40,5 +40,10 @@ servicioCtrl.editarServicio=async(req,res)=>{
     req.flash('success','Se ha editado el servicio');
     res.redirect('/servicio/lista');
 }
-
+servicioCtrl.eliminarServicio=async(req,res)=>{
+    const {id}=req.params;
+    await database.query('DELETE FROM servicios WHERE id_servicio=?',[id]);
+    req.flash('success','Se ha eliminado el servicio');
+     res.redirect('/servicio/lista');
+}
 module.exports=servicioCtrl;

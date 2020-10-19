@@ -1,12 +1,12 @@
   <!--/ Section Portfolio Star /-->
-  <form action="/asociado/todo"></form>
+  <form action="/conductor/todo"></form>
   <section id="work" class="portfolio-mf sect-pt4 route">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="m-t-40 text-center">
             <h3 class="title-a">
-              Asociados
+              Conductores
             </h3>
             
             <div class="line-mf"></div>
@@ -21,19 +21,17 @@
         <table class="table table-hover table-responsive-sm text-center">
             <thead class="thead-dark text-center">
                 <tr>
-                  <th>
+                    <th>
+                        Nombre
                     </th>
                     <th>
-                        Nombre de la empresa
+                      Apellido
                     </th>
                     <th>
-                      Actividad comercial
+                      Teléfono
                     </th>
                     <th>
-                      Dirección
-                    </th>
-                    <th>
-                      Correo
+                      Curriculum
                     </th>
                 </tr>
             </thead>
@@ -41,20 +39,17 @@
         {{#each todo}}
                 <tr>
                     <td>
-                        {{foto_asociado}}
+                        {{nombre}}
                     </td>
                      <td>
-                        {{nombre_empresa}}
+                        {{apellido}}
                     </td>
                      <td>
-                        {{actividad_comercial}}
+                        {{telefono}}
                     </td>
                      <td>
-                        {{direccion}}
-                    </td>
-                     <td>
-                        {{correo}}
-                    </td>   
+                        {{curriculum}}
+                    </td>  
                     {{!-- Activar y desactivar a un asociado --}}
                     {{!-- <td>
                         <a class="btn btn-primary mr-2" href="/servicio/editar/{{id_servicio}}" ></a>

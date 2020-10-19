@@ -36,5 +36,10 @@ catalogoCtrl.editarCatalogo=async(req,res)=>{//crear la vista editar
     req.flash('success','Se ha editado el servicio');
      res.redirect('/catalogo/lista');
 }
-
+catalogoCtrl.eliminarCatalogo=async(req,res)=>{
+    const {id}=req.params;
+    await database.query('DELETE FROM catalogo_producto WHERE id_catalogo=?',[id]);
+    req.flash('success','Se ha eliminado el tipo de producto');
+     res.redirect('/catalogo/lista');
+}
 module.exports=catalogoCtrl;

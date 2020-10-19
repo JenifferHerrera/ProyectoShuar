@@ -1,211 +1,44 @@
 <form action="/servicio/lista"></form>
   <!--/ Section Portfolio Star /-->
+<section class="m-t-120">
+<h1 class="text-black text-center">SERVICIOS</h1>
+<div class="text-center mt-3">
+    <a href="/admin" class="btn btn-outline-primary mr-2 mb-3">Regresar</a>
+    <a href="/servicio/crear" class="btn btn-outline-primary ml-2 mb-3">Crear servicio</a>
+</div>
+<div class="row ">
+    <div class="col-8" style="margin-right:auto; margin-left:auto;">
+        <table class="table table-hover table-responsive-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Tipo de servicio
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        {{#each lista}}
+                <tr>
+                    <td>
+                        {{imagen}}
+                    </td>
+                     <td>
+                        {{nombre}}
+                    </td>
+                     
+                    <td>
+                        <a class="btn btn-primary mr-2" href="/servicio/editar/{{id_servicio}}" >Editar</a>
+                        <a class="btn btn-danger ml-2" href="/servicio/eliminar/{{id_servicio}}">Eliminar</a>
+                    </td>
+                </tr>
+                {{else}}
+                <h1 class="text-danger text-center mb-2">No hay servicio creado</h1>
+                {{/each}}
 
-  <section id="work" class="portfolio-mf sect-pt4 route container-login100 m-t-80">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              Servicios
-            </h3>
-            
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/editar/{{id_servicio}}" >Editar servicio</a></button>
-       <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/crear">Crear servicio</a></button>
-
-{{#each lista}}
-
-<h1>{{nombre}}</h1>
-<img src="/img/{{imagen}}" alt="" class="img-fluid">
-
-{{else}}
-<h1>No se hay servicio creado</h1>
- <button type="button" class="btn btn-primary"><a class="text-white" href="/servicio/crear">Crear servicio</a></button>
-
-
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/s2.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/s2.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Transporte</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>              
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>                     
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                  
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/2.jpeg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/2.jpeg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Mudanza</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>
-                      
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>
-                      
-                    </div>
-            
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Fletes</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>              
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>                     
-                    </div>
-                  </div>
-                
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/4.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/4.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Entregas a domicilio</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>              
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>                     
-                    </div>
-                  </div>
-                 
-                 
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/c3.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/c3.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Cursos</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>              
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>                     
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/p3.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/p3.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Productos</h2>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn">
-                       Activar
-                      </button>              
-                    </div>
-                    <br>
-                    <div class="container-login100-form-btn">
-                      <button class="login100-form-btn1">
-                      Desactivar
-                      </button>                     
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
-      </div>
+            </tbody>
+        </table>
     </div>
-  </section>
-  {{/each}}
+</div>
+</section>
   <!--/ Section Portfolio End /-->

@@ -1,6 +1,6 @@
     <div class="container-login100 m-t-100" style="background-image: url('/img/s2.jpg');">
         <div class="wrap-loginpersonalizado p-l-25 p-r-25 p-t-40 p-b-30">
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" action="/asociado/editar/{{asociado.id}}" method="POST">
                 <span class="login100-form-title p-b-37">
                     Datos del asociado
                 </span>
@@ -12,20 +12,13 @@
                         </a>
                     </div>
                     <label class="control-label ml-2">Subir una imagen del producto</label>
-                    <input type="file" class="form-control-file pb-2 ml-3" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file pb-2 ml-3" name="foto_asociado" value="{{asociado.foto_asociado}}">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese N° de identificación">
-                            <input class="input100 text-secondary" type="text" name="username"
-                                placeholder="N° identificación">
-                            <span class="focus-input100"></span>
-                        </div>
-                    </div>
-                    <div class="col-6">
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese nombre de la empresa">
-                            <input class="input100 text-secondary" type="text" name="username"
+                            <input class="input100 text-secondary" type="text" name="nombre_empresa" value="{{asociado.nombre_empresa}}"
                                 placeholder="Nombre de la empresa">
                             <span class="focus-input100"></span>
                         </div>
@@ -34,14 +27,14 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la actividad comercial">
-                            <input class="input100 text-secondary" type="text" name="username"
+                            <input class="input100 text-secondary" type="text" name="actividad_comercial" value="{{asociado.actividad_comercial}}"
                                 placeholder="Actividad comercial">
                             <span class="focus-input100"></span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la dirección">
-                            <input class="input100 text-secondary" type="text" name="username" placeholder="Dirección">
+                            <input class="input100 text-secondary" type="text" name="direccion" value="{{asociado.direccion}}" placeholder="Dirección">
                             <span class="focus-input100"></span>
                         </div>
                     </div>
@@ -49,7 +42,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
-                            <input class="input100 text-secondary" type="text" name="username"
+                            <input class="input100 text-secondary" type="text" name="correo" value="{{asociado.correo}}"
                                 placeholder="Correo electrónico">
                             <span class="focus-input100"></span>
                         </div>
@@ -60,9 +53,9 @@
 					<button class="login100-form-btn mr-2" type="submit">
 						Guardar
                     </button>
-                    <button class="login100-form-btn ml-2" type="submit">
+                    <a class="login100-form-btn ml-2" href="/asociado/vista">
 						Regresar
-					</button>
+					</a>
 				</div>
             </form>
 
