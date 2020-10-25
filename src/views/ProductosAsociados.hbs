@@ -1,6 +1,6 @@
   <!--/ Section Portfolio Star /-->
   <form action="/producto/lista"></form>
-  <section id="work" class="portfolio-mf sect-pt4 route container-login100 m-t-100">
+  <section id="work" class="portfolio-mf sect-pt4 route m-t-40">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -8,17 +8,18 @@
             <h3 class="title-a">
               Productos
             </h3>
-            
             <div class="line-mf"></div>
           </div>
         </div>
       </div>
       <div class="text-left mb-4">
-        <button type="button" class="btn btn-primary">Crear un nuevo producto</button>
+        <a href="/asociado/vista" class="btn btn-primary mr-2">Regresar</a>
+        <a href="/producto/crear" class="btn btn-primary ml-2">Crear un nuevo producto</a>
       </div>
       <div class="row">
+        {{#each lista}}
         <div class="col-md-4">
-          <div class="work-box">
+          <div class="work-box"> <!--La foto del producto-->
             <a href="/img/e.jpg" data-lightbox="gallery-mf">
               <div class="work-img text-center">
                 <img src="/img/e.jpg" alt="" class="img-fluid" width="270px">
@@ -26,108 +27,22 @@
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
-                    <h2 class="w-title">Pizzas</h2>
-                        <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
-                  </div>
-                  <div class="col-sm-4">
-                  
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/ma1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img text-center">
-                <img src="/img/ma1.jpg" alt="" class="img-fluid"  width="285px">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Hamburguesas</h2>
-                    <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
+                    <h2 class="w-title mb-2">Nombre producto: {{nombre_producto}}</h2>
+                    <p class="card-text">Tipo: {{catalogo_producto}}</p>
+                     <p class="card-text">Cantidad: {{cantidad}}</p>
+                     <p class="card-text mb-2">Precio: ${{valor}}</p>
+                        <a href="/producto/editar/{{id_producto}}" class="btn btn-primary mr-2 ml-4">Editar</a>
+                        <a href="/producto/eliminar/{{id_producto}}" class="btn btn-danger ml-2">Eliminar</a>
                   </div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/f1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/f1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Farmacéutico</h2>
-                    <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/y.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/y.jpg" alt="" class="img-fluid" width="330">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Yogurt</h2>
-                    <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/a.png" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="/img/a.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Atún</h2>
-                    <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="/img/ace.jpg" data-lightbox="gallery-mf">
-              <div class="work-img text-center">
-                <img src="/img/ace.jpg" alt="" class="img-fluid" width="230">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Aceite</h2>
-                    <button type="button" class="btn btn-primary mr-2 ml-4">Editar</button>
-                        <button type="button" class="btn btn-danger ml-2">Eliminar</button>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        {{else}}
+                <h1 class="text-danger text-center mb-2">No hay productos creados</h1>
+        {{/each}}
+        
         
       </div>
     </div>

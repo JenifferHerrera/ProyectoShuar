@@ -179,7 +179,7 @@ passport.use(
       passReqToCallback: true
     },
     async (req, username, password, done) => {
-      const { nombre,apellido,telefono,curriculum,estado,correo } = req.body;
+      const { nombre,apellido,telefono,curriculum,estado,correo,foto_conductor} = req.body;
 
       let newUser = {
         username,
@@ -191,6 +191,7 @@ passport.use(
         apellido,
         telefono,
         curriculum,
+        foto_conductor,
         estado
       }
 

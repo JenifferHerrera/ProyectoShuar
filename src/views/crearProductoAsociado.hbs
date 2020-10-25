@@ -1,32 +1,33 @@
-	<div class="container-login100 m-t-100" style="background-image: url('/img/conductor.jpg');">
-		<div class="wrap-loginpersonalizado p-l-55 p-r-55 p-t-50 p-b-30">
-			<form class="login100-form validate-form" action="/producto/crear" method="POST" >
+	<div class="container-login100" style="background-image: url('/img/conductor.jpg');">
+		<div class="wrap-loginpersonalizado p-l-55 p-r-55 p-t-50 p-b-30 m-t-90">
+			<form class="login100-form validate-form" id="formulario" action="/producto/crear" method="POST" enctype="multipart/form-data"> 
 				<span class="login100-form-title p-b-37">
 					Producto
 				</span>
-				<input type="hidden" name="estado" value=1/>
+				<input type="hidden" name="estado" id="estado" value="1"/>
                 </span>
                 <div class="wrap-input100 validate-input m-b-25" data-validate="Subir foto del producto">
-                        <label class="control-label">Subir una imagen del producto</label>
-                        <input type="file" class="form-control-file pb-2 ml-3" name="foto_producto" id="foto_producto">
+                        <label class="control-label letraMorada">Subir una imagen del producto</label>
+                        <input type="file" class="form-control-file pb-2 ml-3" name="foto_producto">
                         <span class="focus-input100"></span>
                     </div>
 				<div class="row">
                     <div class="col-6">
 					<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese el nombre del producto">
-                        <input class="input100 text-secondary" type="text" name="nombre_producto" id="nombre_producto"
+                        <input class="input100 text-secondary" type="text" name="nombre_producto"
                             placeholder="Nombre del producto">
                         <span class="focus-input100"></span>
                     </div>
                 </div>
 					
 					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
-							<label class="control-label">Tipo de producto</label>
-							<select class="form-control form-control-lg" name="catalogo_producto" value="{{producto.catalogo_producto}}">
-								<option>Seleccione..</option>
-								<option>Alimenticio</option>
-								<option>Medico</option>
+							<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
+							<label class="control-label letraMorada">Tipo de producto</label>
+						<select class="form-control form-control-lg" name="catalogo_producto">
+								<option>Seleccione...</option>
+							{{#each catalogo}}
+								<option>{{this.nombre}}</option>
+							{{/each}}
 							</select>
 							<span class="focus-input100"></span>
 						</div>
@@ -48,15 +49,15 @@
 				</div>
 				<div class="row">
 					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese la fecha de elaboración">
-                            <label class="control-label">Fecha de elaboración</label>
+						<div class="wrap-input100 validate-input m-b-20">
+                            <label class="control-label letraMorada">Fecha de elaboración</label>
 							<input class="input100 text-secondary" type="date" name="fecha_elab" placeholder="Fecha de elaboración">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
 					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la fecha de caducidad">
-                            <label class="control-label">Fecha de caducidad</label>
+						<div class="wrap-input100 validate-input m-b-25">
+                            <label class="control-label letraMorada">Fecha de caducidad</label>
 							<input class="input100 text-secondary" type="date" name="fecha_cadu"
 								placeholder="Fecha de caducidad">
 							<span class="focus-input100"></span>
@@ -67,9 +68,9 @@
 					<button class="login100-form-btn mr-2" type="submit">
 						Guardar
                     </button>
-                    <button class="login100-form-btn ml-2" type="submit">
+                    <a href="producto/lista" class="login100-form-btn ml-2">
 						Regresar
-					</button>
+					</a>
 				</div>
 		</div>
 		</form>

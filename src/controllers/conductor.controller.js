@@ -13,19 +13,20 @@ conductorCtrl.perfilConductor=async(req,res)=>{
 
 conductorCtrl.seleccionarConductor=async(req,res)=>{
     const {id}=req.params;
-    const conductorPerfil=await database.query('SELECT * FROM conductores WHERE id=?',[id]);
-    res.render('editarDatosConductor',{conductor:conductorPerfil[0]});
+    const conductor=await database.query('SELECT * FROM conductores WHERE id=?',[id]);
+    res.render('editarDatosConductor',{conductor:conductor[0]});
 }
 
 conductorCtrl.editarConductor=async(req,res)=>{
     const {id}=req.params;
-    const {nombre,apellido,telefono,curriculum,estado}=req.body;
+    const {nombre,apellido,telefono,curriculum,estado,foto_conductor}=req.body;
     const nuevaEdicion={
         nombre,
         apellido,
         telefono,
         curriculum,
-        estado
+        estado,
+        foto_conductor 
     }
     await database.query('UPDATE conductores set ? WHERE id=?', [nuevaEdicion,id]);
     req.flash('success','Se ha editado sus datos personales');

@@ -1,13 +1,14 @@
 POR HACER
--Perfil de asociado(no se muestran datos)
+
+-los id detalle en asociado y conductores
+-imagenes en las tablas asociados,conductor,vehiculo,productos
+-las fechas en productos piden ingresar otra vez
 
 
--Verificar los action con los controlladores en conductor y en las rutas
--Realizar las rutas de conductor.route.js
--Las vistas en perfil con vehiculos
--rutas de vehiculos
--conductor/vista--router
-
+Pendiente
+-Autenticacion
+-Validacipon de formularios
+-Pdf
 
 
 HECHO
@@ -18,4 +19,13 @@ HECHO
 -Hacer la vista de Perfil de asociados y en el action poner conductor/vista
 -Editar asociado
 -Vista de conductores para Administrador
+-Perfil de asociado(no se muestran datos)
+-Las vistas en perfil con vehiculos
+-Realizar las rutas de conductor.route.js
+-conductor/vista--router
+-Verificar los action con los controlladores en conductor y en las rutas
+-Vista de editar si llama los datos 
+-Vehiculo el tipo de vehiculo(registroVehiculo y editar Vehiculo)
+-Perfil conductor no trae los datos
+-Productos con Asociados(catalogo_producto en crear y editar)
 

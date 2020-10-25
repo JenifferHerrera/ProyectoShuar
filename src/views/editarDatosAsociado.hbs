@@ -4,6 +4,7 @@
                 <span class="login100-form-title p-b-37">
                     Datos del asociado
                 </span>
+                <input type="hidden" name="estado" value=1/>
                 <div class="wrap-input100 validate-input m-b-25 mt-2" data-validate="Subir foto del producto">
                     <div class="thumbnail text-center mt-2">
                         <a href="/img/s1.jpg">
@@ -11,7 +12,7 @@
                                 class="rounded-circle" asp-append-version="true" />
                         </a>
                     </div>
-                    <label class="control-label ml-2">Subir una imagen del producto</label>
+                    <label class="control-label ml-2">Subir una imagen</label>
                     <input type="file" class="form-control-file pb-2 ml-3" name="foto_asociado" value="{{asociado.foto_asociado}}">
                     <span class="focus-input100"></span>
                 </div>

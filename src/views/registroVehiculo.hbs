@@ -10,11 +10,11 @@
 				<div class="row">
 					<div class="col-6">
 						<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
-							<label class="control-label">Tipo de vehículo</label>
+							<label class="control-label letraMorada">Tipo de vehículo</label>
 							<select class="form-control form-control-lg" name="tipo_vehiculo">
-								<option value="{{tipo_vehiculo.id}}">{{tipo_vehiculo.nombre_tipo_vehiculo}}</option>
+								<option>Seleccione...</option>
 							{{#each lista}}
-								<option value="{{this.id}}">{{this.nombre_tipo_vehiculo}}</option>
+								<option>{{this.nombre_tipo_vehiculo}}</option>
 							{{/each}}
 							</select>
 							<span class="focus-input100"></span>
@@ -67,10 +67,13 @@
 					</div>
 				</div>
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" type="submit">
-						Registrar
+					<button class="login100-form-btn mr-2" type="submit">
+						Guardar
 					</button>
-				</div>
+					<a href="javascript: history.go(-1)" class="login100-form-btn ml-2" type="submit">
+						Regresar
+					</a>
+				</div>	
 		</div>
 		</form>
 

@@ -1,64 +1,109 @@
 	<form action="/conductor/vista"></form>
-	<div class="container-login100 m-t-100" style="background-image: url('/img/conductor.jpg');">
-	    <div class="card">
-			<div class="card-body">
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="thumbnail" style="align-content: center">
-							<a href="/img/s2.jpeg">
-								<img src="/img/s2.jpeg" alt="imagen no encntrada" height="200" width="200" class="rounded-circle" asp-append-version="true" />
-							</a>
-						</div>
-						<br /><br />
-						<h4 class="text-info">Nombre del Conductor/cedula</h4>
-						<button class="login100-form-btn mt-3" type="submit">
-							Regresar
-						</button>
-					</div>
-						<div class="row">
-							<div class="col-sm-12">
-									<div class="text-primary">
-										Tipo de vehiculo
-									</div>
-									<div class="pb-1">
-										Vehiculo propio
-									</div>
-									<div class=" text-primary">
-										Número de placa
-									</div>
-									<div class="pb-1">
-										PWX-1722
-									</div>
-									<div class=" text-primary">
-										Modelo
-									</div>
-									<div class="pb-1">
-										ALTIMA
-									</div>
-									<div class=" text-primary">
-										Año
-									</div>
-									<div class="pb-1">
-										2019
-									</div>
-									<div class=" text-primary">
-										Marca
-									</div>
-									<div class="pb-1">
-										NISSAN 
-									</div>
-									<div class=" text-primary">
-										Color
-									</div>
-									<div class="pb-1">
-										Rojo
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<section id="work" class="portfolio-mf sect-pt4 route m-t-40">
+	<div class="mb-4 text-center">
+		<h3 class="title-a">
+			Perfil del conductor
+		</h3>
+		<div class="line-mf"></div>
+	</div>
+	<div class="text-center mt-2">
+		{{#each perfil}}
+		<a href="/conductor/editar/{{id}}" class="btn btn-outline-primary mr-4 mb-3">Editar datos</a>
+	</div>
+	<div class="card">
+		<div class="card-header text-center">
+			<h2 class="text-info">{{nombre}} {{apellido}}</h2>
+		</div>
+		<div class="card-body text-center">
+			<div class="thumbnail text-center mt-2">
+                            <img src="/img/s1.jpg" alt="imagen no encntrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" name="foto_conductor" value="{{foto_conductor}}" />
 			</div>
+			<div class="text-primary">
+				{{telefono}}
+			</div>
+			<div class="pb-1">
+				{{correo}}
+			</div>
+			<div class="pb-1">
+				{{curriculum}}
+			</div>
+			<div class=" text-primary">
+				{{#if estado}}
+				<h3 class="text-info">ACTIVO</h3>
+				{{else}}
+				<h3 class="text-info">INACTIVO</h3>
+				{{/if}}
+			</div>
+			{{/each}}
 		</div>
 	</div>
+	<!--Datos del vehiculo-->
+	<h1 class="text-black text-center mt-3">Vehiculo</h1>
+	<div class="text-center mt-2">
+		<a href="/vehiculo/crear" class="btn btn-outline-primary mr-4 mb-3">Agregar vehiculo</a>
+	</div>
+	<div class="row ">
+    <div class="col-8" style="margin-right:auto; margin-left:auto;">
+        <table class="table table-hover table-responsive-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+					<th></th>
+                    <th>
+                        N° placa
+                    </th>
+                    <th>
+						Modelo
+					</th>
+					 <th>
+						Marca
+					</th>
+					 <th>
+						Año de vehiculo
+					</th>
+					 <th>
+						Color
+					</th>
+					 <th>
+						Tipo de vehiculo
+					</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{#each perfil}}
+                <tr>
+                    <td>
+                        {{foto_vehiculo}}
+                    </td>
+                     <td>
+                        {{num_placa}}
+                    </td>
+					<td>
+                        {{modelo}}
+                    </td>
+					<td>
+                        {{marca}}
+                    </td>
+					<td>
+                        {{ano_vehiculo}}
+                    </td>
+					<td>
+                        {{color}}
+                    </td>
+					<td>
+                        {{tipo_vehiculo}}
+                    </td>
+                    <td>
+                        <a class="btn btn-primary mr-2" href="/vehiculo/editar/{{id_vehiculo}}" >Editar</a>
+                        <a class="btn btn-danger ml-2" href="/vehiculo/eliminar/{{id_vehiculo}}">Eliminar</a>
+                    </td>
+                </tr>
+                {{else}}
+                <h1 class="text-danger text-center mb-2">No hay vehiculo registrado</h1>
+                {{/each}}
 
-	
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>

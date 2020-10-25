@@ -1,46 +1,37 @@
-    <form action="asociado/perfil"></form>
-    <section id="work" class="portfolio-mf sect-pt4 route m-t-40">
-    <div class="mb-4 text-center">
-      <h3 class="title-a">
-        Perfil del asociado
-      </h3>
-      <div class="line-mf"></div>
-    </div>
-      <div class="text-center mt-2">
-          <a href="/asociado/vista" class="btn btn-outline-primary mr-2 mb-3">Regresar</a>
-		  {{#each perfil}}
-          <a href="/asociado/editar/{{id}}" class="btn btn-outline-primary mr-2 mb-3">Editar datos</a>
-      </div>
-	    <div class="card">
-			<div class="card-body">
-				<div class="row">
-					<div class="col-sm-7">
-						{{!-- foto de asociado
-                         <div class="thumbnail" style="align-content: center">
-							<a href="/img/s2.jpeg">
-								<img src="/img/s2.jpeg" name="foto_asociado" height="200" width="200" class="rounded-circle" asp-append-version="true" />
-							</a>
-						</div> --}}
-						<br /><br />
-						<h4 class="text-info">{{nombre_empresa}}</h4>
-					</div>
-						<div class="row">
-							<div class="col-sm-12">
-									<div class="text-primary">
-										{{actividad_comercial}}
-									</div>
-									<div class="pb-1">
-										{{direccion}}
-									</div>
-									<div class=" text-primary">
-										{{correo}}
-									</div>
-							</div>
-						</div>
-                        {{/each}}
-					</div>
-				</div>
+<form action="asociado/dato"></form>
+<section id="work" class="portfolio-mf sect-pt4 route m-t-40">
+	<div class="mb-4 text-center">
+		<h3 class="title-a">
+			Perfil del asociado
+		</h3>
+		<div class="line-mf"></div>
+	</div>
+	<div class="text-center mt-2">
+		<a href="/asociado/vista" class="btn btn-outline-primary mr-4 mb-3">Regresar</a>
+		{{#each lista}}
+		<a href="/asociado/editar/{{id}}" class="btn btn-outline-primary mr-4 mb-3">Editar datos</a>
+	</div>
+	<div class="card">
+		<div class="card-header text-center">
+			<h2 class="text-info">{{nombre_empresa}}</h2>
+		</div>
+		<div class="card-body text-center">
+			<div class="thumbnail" style="align-content: center">
+				<a href="/img/s2.jpg">
+					<img src="/img/s2.jpg" name="foto_asociado" height="150" width="150" class="rounded-circle"
+						asp-append-version="true" />
+				</a>
 			</div>
-		
-    </div>
-  </section>
+			<div class="text-primary">
+				{{actividad_comercial}}
+			</div>
+			<div class="pb-1">
+				{{direccion}}
+			</div>
+			<div class=" text-primary">
+				{{correo}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</section>

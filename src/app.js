@@ -8,6 +8,8 @@ const flash = require('connect-flash');
 const mysqlstore = require('express-mysql-session')(session);
 const bodyparser = require('body-parser'); 
 
+
+
 const {database} = require('./database/keys');
 
 
@@ -15,7 +17,7 @@ const app = express();
 require('./lib/passport');
 
 /// archivos compartidos
-app.set('port', process.env.PORT|| 3434);
+app.set('port', process.env.PORT|| 3636);
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs',exphbs({
     defaultLayout:'main',
@@ -47,7 +49,7 @@ app.use(passport.session());
 
 //varible globales 
 app.use((req,res,next )=>{
-    app.locals.menssage = req.flash('menssage');
+    app.locals.message = req.flash('message');
     app.locals.success = req.flash('success');
     app.locals.user = req.user;
     next();

@@ -1,19 +1,15 @@
 const asociadoCtrl={}
 const database=require('../database/database');
 
-asociadoCtrl.listaServicio=async(req,res)=>{
-    const servicio=await database.query('SELECT * FROM servicios');
-    console.log(servicio);
-    res.render('registroAsociado',{servicio});
-    }
 
 asociadoCtrl.todosAsociados=async(req,res)=>{
     const todo=await database.query('SELECT * FROM asociados');
     res.render('asociados',{todo});
 }
-asociadoCtrl.listaAsociado=async(req,res)=>{
-    const perfil=await database.query('SELECT * FROM asociados WHERE id=?',[req.user.id]);
-    res.render('perfilAsociado',{perfil});
+asociadoCtrl.perfilAsociado=async(req,res)=>{
+    const lista=await database.query('SELECT * FROM asociados WHERE id = ?',[req.user.id]);
+    console.log(lista)
+    res.render('perfilAsociado',{lista});
 }
 
 asociadoCtrl.seleccionarAsociado=async(req,res)=>{
@@ -35,7 +31,7 @@ asociadoCtrl.editarAsociado=async(req,res)=>{
     }
     await database.query('UPDATE asociados set ? WHERE id=?',[nuevaEdicion,id]);
     req.flash('success','Se ha editado sus datos con éxito');
-     res.redirect('/asociado/perfil');
+     res.redirect('/asociado/dato');
 }
 
 module.exports=asociadoCtrl;
