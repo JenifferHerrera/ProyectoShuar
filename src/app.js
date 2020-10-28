@@ -9,9 +9,7 @@ const mysqlstore = require('express-mysql-session')(session);
 const bodyparser = require('body-parser'); 
 
 
-
 const {database} = require('./database/keys');
-
 
 const app = express();
 require('./lib/passport');
@@ -27,7 +25,6 @@ extname: '.hbs',
 helpres: require('./lib/handlebars')
 }));
 app.set('view engine', '.hbs');
-/// archivos compartidos
 
 
 //midlewars

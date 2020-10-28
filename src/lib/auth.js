@@ -12,6 +12,6 @@ module.exports={
     isConductor(req,res,next){
         if(req.isAuthenticated())
         return next();
-        res.redirect('/vehiculo/vista')
+        res.redirect('/conductor/vista')
     }
 }

@@ -1,6 +1,7 @@
 const productoCtrl={}
 const database=require('../database/database');
 
+
 productoCtrl.renderMostrar=(req,res)=>{
     res.render('crearProductoAsociado');
 }
@@ -17,6 +18,7 @@ productoCtrl.agregarProducto=async(req,res)=>{
         catalogo_producto,
         id_asociado: req.user.id 
     }
+    console.log(req.body.foto_producto);
     await database.query('INSERT INTO productos set ?', [nuevoProducto]);
     req.flash('success','Se ha creado un nuevo producto');
     res.redirect('/producto/lista');
@@ -24,7 +26,6 @@ productoCtrl.agregarProducto=async(req,res)=>{
 
 productoCtrl.catalogoProducto=async(req,res)=>{
     const catalogo=await database.query('SELECT nombre FROM catalogo_producto');
-    console.log(catalogo);
     res.render('crearProductoAsociado',{catalogo});
 }
 

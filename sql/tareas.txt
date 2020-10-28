@@ -1,8 +1,7 @@
 POR HACER
 
 -los id detalle en asociado y conductores
--imagenes en las tablas asociados,conductor,vehiculo,productos
--las fechas en productos piden ingresar otra vez
+-imagenes en las tablas asociados,conductor,vehiculo,productos,servicios
 
 
 Pendiente

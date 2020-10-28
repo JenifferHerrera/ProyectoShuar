@@ -6,6 +6,6 @@ userCtrl.renderAsociado=(req,res,next)=>{
     res.render('adminAsociados')
 }
 userCtrl.renderConductor=(req,res,next)=>{
-    res.render('registroVehiculo')
+    res.render('perfilConductor')
 }
 module.exports=userCtrl;

@@ -7,8 +7,9 @@ conductorCtrl.listaConductores=async(req,res)=>{
 }
 
 conductorCtrl.perfilConductor=async(req,res)=>{
-    const perfil=await database.query('SELECT * FROM conductores INNER JOIN vehiculos ON conductores.id=vehiculos.id_conductor WHERE conductores.id=?',[req.user.id]);
-    res.render('perfilConductor',{perfil});
+    const perfil=await database.query('SELECT * FROM conductores  WHERE id=?',[req.user.id]);
+    const lista=await database.query('SELECT * FROM conductores INNER JOIN vehiculos ON conductores.id=vehiculos.id_conductor WHERE conductores.id=?',[req.user.id]);
+    res.render('perfilConductor',{perfil,lista});
 }
 
 conductorCtrl.seleccionarConductor=async(req,res)=>{

@@ -41,7 +41,7 @@ authCtrl.renderAsociado= (req, res, next) => {
 
 authCtrl.asociado = passport.authenticate('local.signupA', {
     successRedirect: '/asociado/vista',
-    failureRedirect: '/loginAsociado',
+    failureRedirect: '/registroAsociado',
     failureFlash: true
 });
 
@@ -62,8 +62,8 @@ authCtrl.renderConductor= (req, res, next) => {
 };
 
 authCtrl.conductor = passport.authenticate('local.signupC', {
-    successRedirect: '/vehiculo/crear',
-    failureRedirect: '/loginConductor',
+    successRedirect: '/conductor/vista',
+    failureRedirect: '/registroConductor',
     failureFlash: true
 });
 

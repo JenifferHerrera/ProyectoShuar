@@ -7,6 +7,8 @@
 				<input type="hidden" name="estado" value=1/>
                 </span>
                 <div class="wrap-input100 validate-input m-b-25" data-validate="Subir foto del producto">
+					<img src="/imagenes/productos/{{producto.foto_producto}}" alt="imagen no encontrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" />
                         <label class="control-label letraMorada">Subir una imagen del producto</label>
 						<input type="text" class="form-control-file pb-2 ml-3" value="{{producto.foto_producto}}" >
                         <input type="file" class="form-control-file pb-2 ml-3" name="foto_producto">
@@ -50,7 +52,7 @@
 				</div>
 				<div class="row">
 					<div class="col-6">
-						<div class="wrap-input100 m-b-20">
+						<div class="wrap-input100 validate-input m-b-20">
                             <label class="control-label letraMorada">Fecha de elaboración</label>
 							<input class="input100 text-secondary" type="text" value="{{producto.fecha_elab}}">
 							<input class="input100 text-secondary" type="date" name="fecha_elab" placeholder="Fecha de elaboración">
@@ -58,7 +60,7 @@
 						</div>
 					</div>
 					<div class="col-6">
-						<div class="wrap-input100 m-b-25">
+						<div class="wrap-input100 validate-input m-b-25">
                             <label class="control-label letraMorada">Fecha de caducidad</label>
 							<input class="input100 text-secondary" type="text" value="{{producto.fecha_cadu}}">
 							<input class="input100 text-secondary" type="date" name="fecha_cadu"
@@ -80,12 +82,3 @@
 
 	</div>
 	</div>
-	<script>
-		document.getElementById('foto_producto').addEventListener('click',function(){
-			var foto=document.getElementsById('foto_producto');
-			alert(foto);
-		})
-
-
-		
-	</script>

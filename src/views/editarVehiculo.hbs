@@ -7,15 +7,13 @@
 				</span>
 				<input type="hidden" name="estado" value=1/>
 				<div class="row">
-					<div class="col-6">
-						<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
-							<label class="control-label">Tipo de vehículo</label>
-							<select class="form-control form-control-lg" name="tipo_vehiculo">
-							<option>{{vehiculo.tipo_vehiculo}}</option>
-							{{#each lista}}
-								<option>{{this.nombre_tipo_vehiculo}}</option>
-							{{/each}}
-							</select>
+					<div class="col-12">
+						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la fotografía">
+							<img src="/imagenes/vehiculos/{{vehiculo.foto_vehiculo}}" alt="imagen no encntrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" />
+							<label class="control-label letraMorada">Subir una imagen del vehículo</label>
+							<input type="text" class="form-control-file pb-2 ml-3" value="{{vehiculo.foto_vehiculo}}">
+							<input type="file" class="form-control-file pb-2 ml-3" name="foto_vehiculo">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
@@ -57,11 +55,15 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<div class="wrap-input100 validate-input m-b-25" data-validate="Ingrese la fotografía">
-							<label class="control-label letraMorada">Subir una imagen del vehículo</label>
-							<input type="text" class="form-control-file pb-2 ml-3" value="{{vehiculo.foto_vehiculo}}">
-							<input type="file" class="form-control-file pb-2 ml-3" name="foto_vehiculo">
+					<div class="col-6">
+						<div class="wrap-input100 validate-input m-b-20" data-validate="Seleccione el tipo de vehículo">
+							<label class="control-label">Tipo de vehículo</label>
+							<select class="form-control form-control-lg" name="tipo_vehiculo">
+							<option>{{vehiculo.tipo_vehiculo}}</option>
+							{{#each lista}}
+								<option>{{this.nombre_tipo_vehiculo}}</option>
+							{{/each}}
+							</select>
 							<span class="focus-input100"></span>
 						</div>
 					</div>

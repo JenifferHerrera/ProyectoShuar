@@ -37,7 +37,7 @@
                         {{id_asociado}}
                     </td>
                      <td>
-                        {{nombre_catalogo}}<!--nombre de la categoria del producto-->
+                        {{catalogo_producto}}<!--nombre de la categoria del producto-->
                     </td>
                     <td>
                        {{nombre_producto}}
@@ -49,7 +49,9 @@
                        {{valor}}
                     </td>
                     <td>
-                       {{foto_producto}}
+                       <img src="/imagenes/productos/{{foto_producto}}" alt="imagen no encntrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" />
+                       
                     </td>
                 </tr>
                 {{else}}

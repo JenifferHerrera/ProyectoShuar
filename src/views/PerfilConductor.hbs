@@ -7,6 +7,7 @@
 		<div class="line-mf"></div>
 	</div>
 	<div class="text-center mt-2">
+		<a href="/" class="btn btn-outline-primary mr-4 mb-3">Salir</a>
 		{{#each perfil}}
 		<a href="/conductor/editar/{{id}}" class="btn btn-outline-primary mr-4 mb-3">Editar datos</a>
 	</div>
@@ -16,7 +17,7 @@
 		</div>
 		<div class="card-body text-center">
 			<div class="thumbnail text-center mt-2">
-                            <img src="/img/s1.jpg" alt="imagen no encntrada" height="80" width="80"
+                            <img src="/imagenes/conductores/{{foto_conductor}}" alt="imagen no encntrada" height="80" width="80"
                                 class="rounded-circle" asp-append-version="true" name="foto_conductor" value="{{foto_conductor}}" />
 			</div>
 			<div class="text-primary">
@@ -70,10 +71,12 @@
                 </tr>
             </thead>
             <tbody>
-        {{#each perfil}}
+        {{#each lista}}
                 <tr>
                     <td>
-                        {{foto_vehiculo}}
+						<img src="/imagenes/vehiculos/{{foto_vehiculo}}" alt="imagen no encntrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" name="foto_conductor" />
+                        
                     </td>
                      <td>
                         {{num_placa}}

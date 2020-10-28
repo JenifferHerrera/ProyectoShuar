@@ -5,15 +5,18 @@
 					Editar Servicio
 				</span>
 					<input type="hidden" name="estado" value=1/>
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingres el nombre ">
-					<input class="input100" type="text" name="nombre" value="{{servicio.nombre}}" placeholder="Ingrese el nombre ">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input m-b-25" data-validate="Subir foto del producto">
+					<div class="wrap-input100 validate-input m-b-25" data-validate="Subir foto del producto">
+					 <img src="/imagenes/servicios/{{servicio.imagen}}" alt="imagen no encontrada" height="80" width="80"
+                                class="rounded-circle" asp-append-version="true" />
                         <label class="control-label">Subir una imagen del servicio</label>
                         <input type="file" class="form-control-file pb-2 ml-3" name="imagen" value="{{servicio.imagen}}">
                         <span class="focus-input100"></span>
                     </div>
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Ingres el nombre ">
+					<input class="input100" type="text" name="nombre" value="{{servicio.nombre}}" placeholder="Ingrese el nombre ">
+					<span class="focus-input100"></span>
+				</div>
+				
 				
                 <br>
 				<div class="container-login100-form-btn">

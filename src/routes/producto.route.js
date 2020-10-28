@@ -1,9 +1,4 @@
 const express=require('express');
-const { v4: uuidv4 } = require('uuid');
-const path=require('path');
-// uuidv4()+path.extname(file.originalname).toLocaleLowerCase()
-const multer=require('multer');
-
 
 const router = express.Router();
 
