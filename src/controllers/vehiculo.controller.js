@@ -12,7 +12,7 @@ vehiculoCtrl.agregarVehiculo=async(req,res)=>{
         foto_vehiculo,
         estado,
         tipo_vehiculo,
-        id_conductor: req.user.id
+        id_conductor: req.user.username
     }
     await database.query('INSERT INTO vehiculos set ?',[nuevoVehiculo]);
     req.flash('success','Se han agregado los datos de su vehiculo');
@@ -26,8 +26,8 @@ res.render('registroVehiculo',{lista});
 }
 
 vehiculoCtrl.seleccionarVehiculo=async(req,res)=>{
-    const {id}=req.params;
-    const vehiculos=await database.query('SELECT * FROM vehiculos WHERE id_vehiculo=?',[id]);
+    const {username}=req.params;
+    const vehiculos=await database.query('SELECT * FROM vehiculos WHERE id_conductor=?',[username]);
     const lista=await database.query('SELECT nombre_tipo_vehiculo FROM tipo_vehiculo');
     res.render('editarVehiculo',{vehiculo:vehiculos[0],lista});
 }

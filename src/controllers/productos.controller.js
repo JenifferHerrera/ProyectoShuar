@@ -16,7 +16,7 @@ productoCtrl.agregarProducto=async(req,res)=>{
         foto_producto,
         estado,
         catalogo_producto,
-        id_asociado: req.user.id 
+        id_asociado: req.user.username
     }
     console.log(req.body.foto_producto);
     await database.query('INSERT INTO productos set ?', [nuevoProducto]);
@@ -30,7 +30,7 @@ productoCtrl.catalogoProducto=async(req,res)=>{
 }
 
 productoCtrl.listaProductos=async(req,res)=>{
-    const lista=await database.query('SELECT * FROM productos WHERE id_asociado=?',[req.user.id]);
+    const lista=await database.query('SELECT * FROM productos WHERE id_asociado=?',[req.user.username]);
     res.render('productosAsociados',{lista});
 }
 productoCtrl.todosLosProductos=async(req,res)=>{

@@ -39,7 +39,13 @@ authCtrl.renderAsociado= (req, res, next) => {
     res.render('registroAsociado');
 };
 
-authCtrl.asociado = passport.authenticate('local.signupA', {
+// authCtrl.asociado = passport.authenticate('local.signupA', {
+//     successRedirect: '/asociado/vista',
+//     failureRedirect: '/registroAsociado',
+//     failureFlash: true
+// });
+
+authCtrl.asociado = passport.authenticate('local.registerA', {
     successRedirect: '/asociado/vista',
     failureRedirect: '/registroAsociado',
     failureFlash: true
@@ -61,7 +67,13 @@ authCtrl.renderConductor= (req, res, next) => {
     res.render('registroConductor');
 };
 
-authCtrl.conductor = passport.authenticate('local.signupC', {
+// authCtrl.conductor = passport.authenticate('local.signupC', {
+//     successRedirect: '/conductor/vista',
+//     failureRedirect: '/registroConductor',
+//     failureFlash: true
+// });
+
+authCtrl.conductor= passport.authenticate('local.registerC', {
     successRedirect: '/conductor/vista',
     failureRedirect: '/registroConductor',
     failureFlash: true

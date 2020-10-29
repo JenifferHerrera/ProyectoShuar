@@ -7,7 +7,7 @@ asociadoCtrl.todosAsociados=async(req,res)=>{
     res.render('asociados',{todo});
 }
 asociadoCtrl.perfilAsociado=async(req,res)=>{
-    const lista=await database.query('SELECT * FROM asociados WHERE id = ?',[req.user.id]);
+    const lista=await database.query('SELECT * FROM asociados WHERE username = ?',[req.user.username]);
     console.log(lista)
     res.render('perfilAsociado',{lista});
 }

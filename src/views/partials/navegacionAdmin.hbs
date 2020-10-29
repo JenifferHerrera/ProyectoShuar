@@ -10,9 +10,9 @@
     <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
       <ul class="navbar-nav">
         {{#if user}}
-        <li class="nav-item">
+        {{!-- <li class="nav-item">
           <a class="nav-link js-scroll active" href="/signup">Registrar</a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link js-scroll active" href="/logout">Salir</a>
         </li>
@@ -24,14 +24,14 @@
           <a class="nav-link js-scroll active" href="/signup">Registrar</a>
         </li>
         <div class="dropdown nav-item">
-          <button class="dropbtn nav-link js-scroll active">Registrar</button>
+          <button class="nav-link js-scroll active">Registrar</button>
           <div class="dropdown-content">
             <a class="nav-link js-scroll" href="/registroAsociado">Asociado</a>
             <a class="nav-link js-scroll" href="/registroConductor">Conductor</a>
           </div>
         </div>
         <div class="dropdown nav-item">
-          <button class="dropbtn nav-link js-scroll active">Iniciar sesión</button>
+          <button class="nav-link js-scroll active">Iniciar sesión</button>
           <div class="dropdown-content">
             <a class="nav-link js-scroll" href="/loginAsociado">Asociado</a>
             <a class="nav-link js-scroll" href="/loginConductor">Conductor</a>

@@ -34,7 +34,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 app.use(session({
-    secret:'FINTECH',
+    secret:'Proyecto-Shuar',
     resave:false,
     saveUninitialized:false,
     store: new mysqlstore(database)
